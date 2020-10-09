@@ -1,0 +1,33 @@
+<div class="row animated fadeIn ml-2">
+    <div class="col-md-11">
+        <div class="card">
+
+            <div class="card-body">
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" class="form p-t-20">
+                    <div class="form-group">
+                        <label for="exampleInputuname">Ubicacion</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="almacen.ubicacion" name="ubicacion" type="text" class="form-control" placeholder="Ubicacion" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Oficina</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                            <input [ngModel]="almacen.office_id" name="office_id" type="number" class="form-control" placeholder="ID Oficina" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                    <a [routerLink]="['/almacenes']" class="btn btn-block btn-danger"> Cancelar </a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

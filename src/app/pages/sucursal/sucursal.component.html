@@ -1,0 +1,52 @@
+<div class="row animated fadeIn" *ngIf="cargando">
+
+    <div class="col-sm-12">
+        <div class="alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+  
+</div>
+  
+<div class="col-12" *ngIf="!cargando">
+  
+      <div class="card">
+        <div class="card-body">
+    
+          <h3 class="card-title"> Sucursales </h3>
+        
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Ubicacion</th>
+                <th>ID Oficina</th>
+                <!-- <th>Costo</th> -->
+                <th>Opciones</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr *ngFor="let sucursal of sucursales">
+                  <td> {{ sucursal.nombre }}</td>
+                  <td> {{ sucursal.city_id }} </td>
+                  <!-- <td> {{ sucursal }} </td> -->
+                  <td>
+                      <button (click)="editarSucursal(sucursal)" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                      <button (click)="borrarSucursal(sucursal)" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+    
+        </div>
+      </div>
+    
+</div>

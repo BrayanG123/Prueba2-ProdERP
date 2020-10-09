@@ -1,0 +1,40 @@
+<div class="row animated fadeIn ml-2">
+    <div class="col-md-11">
+        <div class="card">
+
+            <div class="card-body">
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" class="form p-t-20">
+                    <div class="form-group">
+                        <label for="exampleInputuname">Nombre Proveedor</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="proveedor.empresa" name="empresa" type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Direccion</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-direction"></i></div>
+                            <input [ngModel]="proveedor.direccion" name="direccion" type="text" class="form-control" placeholder="Direccion" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Telefono</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-headphone-alt"></i></div>
+                            <input [ngModel]="proveedor.telefono" name="telefono" type="text" class="form-control" placeholder="Telefono" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

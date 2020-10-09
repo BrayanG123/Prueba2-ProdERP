@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+#themecolors .selector {
+    cursor: pointer;
+}
+
+/* .card{
+    height: 580px;
+    overflow: hidden;
+    overflow-y: scroll;
+} */
+
+.content-wrapper{
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+}

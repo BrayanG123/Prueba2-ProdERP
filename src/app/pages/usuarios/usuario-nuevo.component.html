@@ -1,0 +1,85 @@
+<div class="row animated fadeIn ml-2">
+    <div class="col-md-11">
+        <div class="card">
+
+            <div class="card-body">
+                <h3 class="card-title"> Registrar nuevo usuario </h3>
+                <br>
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" class="form p-t-20">
+                    
+                    <div class="form-group">
+                        <label for="exampleInputuname">CI</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="usuario.ci" name="ci" type="text" class="form-control" placeholder="CI" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-direction"></i></div>
+                            <input [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Apellido</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-headphone-alt"></i></div>
+                            <input [ngModel]="usuario.apellido" name="apellido" type="text" class="form-control" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                    
+                    <label for="exampleInputEmail1">Sexo</label>
+                    <div class="form-check">
+                        <input [ngModel]="usuario.sexo" class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="M" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Masculino
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input [ngModel]="usuario.sexo" class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="F">
+                        <label class="form-check-label" for="exampleRadios2">
+                        Femenino
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputuname">Rol</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="usuario.rol_id" name="rol_id" type="number" class="form-control" placeholder="rol" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputuname">Departamento</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="usuario.departament_id" name="departament_id" type="number" class="form-control" placeholder="dpto" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputuname">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="usuario.email" name="email" type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+
+                    <a [routerLink]="['/usuarios']" class="btn btn-block btn-danger"> Atras </a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

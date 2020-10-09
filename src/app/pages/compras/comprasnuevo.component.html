@@ -1,0 +1,240 @@
+<!-- <div class="row animated fadeIn">
+    <div class="col-lg-6">
+        <div class="card">
+
+            <div class="card-body">
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" class="form p-t-20">
+                    <div class="form-group">
+                        <label for="exampleInputuname">Id Proveedor</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input [ngModel]="compra.provider_id" name="provider" type="text" class="form-control" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Id Deposito</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                            <input [ngModel]="compra.deposit_id" name="deposit" type="text" class="form-control" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Productos: </label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                            <input [ngModel]="compra.products" name="products" type="text" class="form-control" placeholder="Id" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                            <input [ngModel]="compra.products" name="products" type="text" class="form-control" placeholder="Cantidad" required>
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- Con el modo Reactivo -->
+
+<!-- <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()" class="col-8">
+
+    <div>
+  
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Id Proveedor</label>
+        <div class="col">
+          <input class="form-control"
+                 type="number"
+                 placeholder="Id Proveedor"
+                 formControlName="idproveedor"
+                 >
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Id Deposito</label>
+        <div class="col">
+          <input class="form-control"
+                 type="number"
+                 placeholder="Id Deposito"
+                 formControlName="iddeposito"
+                 >
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="row">
+
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>Id Producto</th>
+              <th>Cantidad</th>
+              <th>Borrar</th>
+            </tr>
+          </thead>
+          <tbody formArrayName="productos">
+            <tr *ngFor="let control of productos.controls; let i=index">
+              <td> {{ i+1 }} </td>
+
+              <td>
+                <input class="form-control"
+                        type="number"
+                        [formControlName]="i">
+              </td>
+              <td>
+                <input class="form-control"
+                        type="number"
+                        [formControlName]="i">
+              </td>
+
+              <td>
+                <button class="btn btn-danger"
+                        type="button"
+                        (click)="borrarProducto(i)">
+                  Borrar
+                </button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+  
+        <button class="btn btn-primary mt-3 mb-5 btn-block"
+                type="button"
+                (click)="agregarProducto()">
+          + Agregar Producto 
+        </button>
+      </div>
+
+    </div>
+  
+    <div class="form-group row">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col">
+        <button type="submit" class="btn btn-outline-primary btn-block">
+          Guardar
+        </button>
+      </div>
+    </div>
+  
+</form> -->
+  
+
+<!-- <pre>
+    Estado del formulario: {{ forma.valid }}
+    <br>
+    Status: {{ forma.status }}
+  </pre>
+  
+  <pre>
+    {{ forma.value | json }}
+</pre> -->
+
+  <!-- Fin del modo Reactivo -->
+
+  <!-- Con la forma del tutorial xd -->
+
+  <form (ngSubmit)="onSubmit()" class="col-10">
+
+    <div class="container">
+
+      <!-- <div class="form-row">
+        <label class="col-2 col-form-label">Id Proveedor</label>
+        <div class="col">
+          <input class="form-control"
+                 type="number"
+                 name="idproveedor"
+                 placeholder="Id Proveedor"
+                 [(ngModel)]="compra.provider_id">
+          
+        </div>
+      </div> -->
+
+      <div class="form-row">
+        <label class="col-2 col-form-label">Proveedor</label>
+        <div class="col">
+          <select class="form-control"
+                  (change)="cambioProveedor($event.target.value)"
+                  >
+                  <option value="">Seleccione Proveedor</option>
+                  <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">
+                    {{ proveedor.empresa }}
+                  </option>
+          </select>       
+          
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <label class="col-2 col-form-label">Id Deposito</label>
+        <div class="col">
+          <input class="form-control"
+                 name="iddeposito"
+                 type="number"
+                 placeholder="Id Deposito"
+                 [(ngModel)]="compra.deposit_id">
+                 
+        </div>
+      </div>
+
+      <!-- ============== NO TENEMOS DEPOSITOOOOOOOOOOOO ===================== -->
+      <!-- <div class="form-row">
+        <label class="col-2 col-form-label">Deposito</label>
+        <div class="col">
+          <select class="form-control"
+                  (change)="cambioProveedor($event.target.value)"
+                  >
+                  <option value="">Seleccione Deposito</option>
+                  <option *ngFor="let deposito of depositos" [value]="deposito.id">
+                    {{ deposito.empresa }}
+                  </option>
+          </select>       
+          
+        </div>
+      </div> -->
+
+    </div>
+
+    <br>
+  
+    <div class="container">
+  
+      <!-- Aqui hace la union con el dataarrayy -->
+      <div class="form-row" *ngFor="let prod of dataarrayy; let i=index">
+  
+        <div class="form-group col-md-4" >
+          <label for="">Id Producto</label>
+          <input type="number" name="id{{i}}" class="form-control" [(ngModel)]="prod.id">
+        </div>
+  
+        <div class="form-group col-md-4" >
+          <label for="">Cantidad</label>
+          <input type="number" name="cantidad{{i}}" class="form-control" [(ngModel)]="prod.cantidad">
+        </div>
+       
+        <div class="form-group col-md-2" *ngIf="i!=0">
+          <span (click)="removeForm(i)" class="btn btn-danger"> Delete </span>
+        </div>
+        
+      </div>
+  
+      <span (click)="addForm()" class="btn btn-danger">+</span>
+      <button class="btn btn-primary">Submit</button>
+    </div>
+    
+  
+  </form>
+
