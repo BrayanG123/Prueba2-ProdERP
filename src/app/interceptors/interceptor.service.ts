@@ -14,7 +14,7 @@ export class InterceptorService implements HttpInterceptor {
 
     console.log('Paso por el interceptor');
     const secureReq = req.clone({
-      url: req.url.replace('http://', 'https://')
+      url: req.url.replace('https://', 'http://')
       });
     return next.handle( req );
 
