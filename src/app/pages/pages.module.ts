@@ -39,6 +39,10 @@ import { SucursaleditComponent } from './sucursal/sucursaledit.component';
 import { CompraverComponent } from './compras/compraver.component';
 import { UsuarioNuevoComponent } from './usuarios/usuario-nuevo.component';
 import { CrearcontraComponent } from './usuarios/crearcontra.component';
+import { VentasComponent } from './ventas/ventas.component';
+import { VentasnuevoComponent } from './ventas/ventasnuevo.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClientenuevoComponent } from './clientes/clientenuevo.component';
 
 
 
@@ -72,6 +76,10 @@ import { CrearcontraComponent } from './usuarios/crearcontra.component';
         CompraverComponent,
         UsuarioNuevoComponent,
         CrearcontraComponent,
+        VentasComponent,
+        VentasnuevoComponent,
+        ClientesComponent,
+        ClientenuevoComponent,
     ],
     imports: [
         SharedModule,

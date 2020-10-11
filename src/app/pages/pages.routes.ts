@@ -30,6 +30,10 @@ import { UsuarioNuevoComponent } from './usuarios/usuario-nuevo.component';
 import { CrearcontraComponent } from './usuarios/crearcontra.component';
 
 import { AuthGuard } from '../guards/auth.guard';
+import { VentasComponent } from './ventas/ventas.component';
+import { VentasnuevoComponent } from './ventas/ventasnuevo.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClientenuevoComponent } from './clientes/clientenuevo.component';
 
 
 
@@ -54,6 +58,9 @@ const pagesRoutes: Routes = [
             { path: 'productonuevo', component: ProductonuevoComponent },
             { path: 'producto-edit/:id', component: ProductoeditComponent },
 
+            { path: 'clientes', component: ClientesComponent },
+            { path: 'clientes-nuevo', component: ClientenuevoComponent },
+
             { path: 'proveedores', component: ProveedoresComponent },
             { path: 'proveedorcrear', component: ProveedorcrearComponent },
             { path: 'proveedit/:id', component: ProveeditComponent },
@@ -66,6 +73,9 @@ const pagesRoutes: Routes = [
             { path: 'almacenes-nuevo', component: AlmacennuevoComponent },
             { path: 'almaceneditar/:id', component: AlmaceneditComponent },
             
+            { path: 'ventas', component: VentasComponent },
+            { path: 'ventas-nuevo', component: VentasnuevoComponent },
+
             //modificando esto (devolver a como estaba despues) El original es dpto
             { path: 'dptos', component: DptoComponent },
             { path: 'dptos-nuevo', component: DptonuevoComponent },

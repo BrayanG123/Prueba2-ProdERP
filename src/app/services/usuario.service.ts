@@ -22,12 +22,12 @@ export class UsuarioService {
 
     return this.http.post(url, usuario).pipe(
       map((resp: any) => {
-        // console.log("La respuestaaa: ", resp);
-        console.log(resp.role_id);
-        console.log(resp.role_name);
+        console.log("La respuestaaa: ", resp);
+        // console.log(resp.role_id);
+        // console.log(resp.role_name);
         this.guardarStorage( resp.access_token, resp.role_name);
-        console.log("exito en login");
-        console.log(resp);
+        // console.log("exito en login");
+        // console.log(resp);
         return true;
       }),
       catchError((err) => {
@@ -46,9 +46,10 @@ export class UsuarioService {
     // console.log("guardarStorage: ", id);
     // console.log("guardarStorage: ", role);
     // this.usuario._id = id;
-    this.usuario.role = role;
+    this.usuario.role_name = role;
+    this.usuario.access_token = access_token;
     this.access_token = access_token;
-    console.log(this.usuario);
+    console.log('el usuario y sus datos', this.usuario);
   }
 
   estalogeado() {

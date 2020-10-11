@@ -1,0 +1,83 @@
+<form (ngSubmit)="onSubmit()" class="col-10">
+
+    <div class="container">
+
+      <div class="form-row">
+        <label class="col-2 col-form-label">Id Cliente</label>
+        <div class="col">
+          <input class="form-control"
+                 name="idcliente"
+                 type="number"
+                 placeholder="Id Cliente"
+                 [(ngModel)]="venta.client_id">
+                 
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="col-2 col-form-label">Id Pago</label>
+        <div class="col">
+          <input class="form-control"
+                 name="idpago"
+                 type="number"
+                 placeholder="Id Pago"
+                 [(ngModel)]="venta.payment_id">
+                 
+        </div>
+      </div>
+     
+      <!-- <div class="form-row">
+        <label class="col-2 col-form-label">Proveedor</label>
+        <div class="col">
+          <select class="form-control"
+                  (change)="cambioProveedor($event.target.value)"
+                  >
+                  <option value="">Seleccione Proveedor</option>
+                  <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">
+                    {{ proveedor.empresa }}
+                  </option>
+          </select>       
+          
+        </div>
+      </div> -->
+      
+
+    </div>
+
+    <br>
+  
+    <div class="container">
+  
+      <div class="form-row" *ngFor="let prod of dataarrayy; let i=index">
+  
+        <div class="form-group col-md-4" >
+          <label for="">Id Producto</label>
+          <input type="number" name="id{{i}}" class="form-control" [(ngModel)]="prod.id">
+        </div>
+  
+        <div class="form-group col-md-4" >
+          <label for="">Cantidad</label>
+          <input type="number" name="cantidad{{i}}" class="form-control" [(ngModel)]="prod.cantidad">
+        </div>
+
+        <div class="form-group col-md-4" >
+          <label for="">Precio</label>
+          <input type="number" name="precio{{i}}" class="form-control" [(ngModel)]="prod.precio">
+        </div>
+
+        <div class="form-group col-md-4" >
+          <label for="">Id Deposito</label>
+          <input type="number" name="deposito{{i}}" class="form-control" [(ngModel)]="prod.deposit_id">
+        </div>
+       
+        <div class="form-group col-md-2" *ngIf="i!=0">
+          <span (click)="removeForm(i)" class="btn btn-danger"> Delete </span>
+        </div>
+        
+      </div>
+  
+      <span (click)="addForm()" class="btn btn-danger">+</span>
+      <button class="btn btn-primary">Submit</button>
+    </div>
+    
+  
+  </form>

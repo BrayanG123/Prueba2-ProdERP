@@ -4,10 +4,12 @@ export class Usuario {
     constructor( 
                  public email:string,
                  public password:string,
-                 public nombre?:string,
-                 public img?:string,
-                 public role?:string,
-                 public _id?:string,
+                 public access_token?:string,
+                 public token_type?: string,
+                 public expires_at?: string,
+                 public role_id?:string,
+                 public role_name?:string,
+                //  public _id?:string,
     ){
         
     }

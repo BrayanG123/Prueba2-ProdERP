@@ -76,8 +76,8 @@ export class SidebarService {
       titulo: 'Ventas',
       icono: 'fas fa-cash-register nav-icon',
       submenu: [
-        { titulo: 'hacer', url: '/dashboard' },
-        { titulo: 'hacer', url: '/dashboard' },
+        { titulo: 'Ventas', url: '/ventas' },
+        { titulo: 'Nuevo', url: '/ventas-nuevo' },
       ]
     },
     {
