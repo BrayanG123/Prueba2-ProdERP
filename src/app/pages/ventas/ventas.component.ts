@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { VentasService } from 'src/app/services/ventas.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { Ventaget } from 'src/app/models/ventasget.model';
-import { Ventaproductget } from 'src/app/models/ventasproductget.model';
+// import { Ventaproductget } from 'src/app/models/ventasproductget.model';
 
 @Component({
   selector: 'app-ventas',
@@ -30,10 +30,10 @@ export class VentasComponent implements OnInit {
   cargarVentaes(){
     this._ventaServices.cargarVentas()
         .subscribe( (ventas:any) => {
-          console.log(ventas);
+          // console.log(ventas);
           this.ventasget = ventas;
           this.cargando = false;
-        } ) 
+        } )   
   }
 
   // editarSucursal( venta:Venta ){

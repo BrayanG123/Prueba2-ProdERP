@@ -43,6 +43,7 @@ import { VentasComponent } from './ventas/ventas.component';
 import { VentasnuevoComponent } from './ventas/ventasnuevo.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientenuevoComponent } from './clientes/clientenuevo.component';
+import { ActivitiesComponent } from './activities/activities.component';
 
 
 
@@ -80,6 +81,7 @@ import { ClientenuevoComponent } from './clientes/clientenuevo.component';
         VentasnuevoComponent,
         ClientesComponent,
         ClientenuevoComponent,
+        ActivitiesComponent,
     ],
     imports: [
         SharedModule,

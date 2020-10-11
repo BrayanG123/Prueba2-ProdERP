@@ -71,9 +71,9 @@ export class ComprasnuevoComponent implements OnInit {
           .subscribe( (resp:any) => {
             console.log(resp);
             // console.log('ComprasTS: tal parece que paso el submit');
+            this.limpiar();      
           } ) 
 
-    this.limpiar();      
     // console.log('Ejecutado el crearCompra?: acabo el proceso del submit');
   }
   

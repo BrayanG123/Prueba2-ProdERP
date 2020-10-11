@@ -84,7 +84,7 @@ export class SidebarService {
       titulo: 'Reportes',
       icono: 'fas fa-file-invoice-dollar nav-icon',
       submenu: [
-        { titulo: 'hacer', url: '/dashboard' },
+        { titulo: 'Bitacora', url: '/activities' },
         { titulo: 'hacer', url: '/dashboard' },
       ]
     },

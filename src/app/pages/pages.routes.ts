@@ -34,6 +34,7 @@ import { VentasComponent } from './ventas/ventas.component';
 import { VentasnuevoComponent } from './ventas/ventasnuevo.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientenuevoComponent } from './clientes/clientenuevo.component';
+import { ActivitiesComponent } from './activities/activities.component';
 
 
 
@@ -85,6 +86,8 @@ const pagesRoutes: Routes = [
             { path: 'sucursaleditar/:id', component: SucursaleditComponent },
 
             { path: 'profile', component: ProfileComponent },
+
+            { path: 'activities', component: ActivitiesComponent },
 
             { path: 'account-settings', component: AccountSettingsComponent },
             { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
