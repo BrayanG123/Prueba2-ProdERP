@@ -177,8 +177,23 @@
           
         </div>
       </div>
-  
+
       <div class="form-row">
+        <label class="col-2 col-form-label">Deposito</label>
+        <div class="col">
+          <select class="form-control"
+                  (change)="cambioDeposito($event.target.value)"
+                  >
+                  <option value="">Seleccione Deposito</option>
+                  <option *ngFor="let deposito of depositos" [value]="deposito.id">
+                    {{ deposito.ubicacion }}
+                  </option>
+          </select>       
+          
+        </div>
+      </div>
+  
+      <!-- <div class="form-row">
         <label class="col-2 col-form-label">Id Deposito</label>
         <div class="col">
           <input class="form-control"
@@ -188,7 +203,7 @@
                  [(ngModel)]="compra.deposit_id">
                  
         </div>
-      </div>
+      </div> -->
 
       <!-- ============== NO TENEMOS DEPOSITOOOOOOOOOOOO ===================== -->
       <!-- <div class="form-row">
@@ -215,11 +230,25 @@
       <!-- Aqui hace la union con el dataarrayy -->
       <div class="form-row" *ngFor="let prod of dataarrayy; let i=index">
   
-        <div class="form-group col-md-4" >
+        <!-- <div class="form-group col-md-4" >
           <label for="">Id Producto</label>
           <input type="number" name="id{{i}}" class="form-control" [(ngModel)]="prod.id">
-        </div>
+        </div> -->
   
+        <div class="form-group col-md-4">
+          <label for="">Producto</label>
+
+          <select class="form-control" name="id{{i}}" 
+                  (change)="cambioProducto($event.target.value, i)"
+                  required>
+                  <option value="">Seleccione Producto</option>
+                  <option *ngFor="let producto of productos"
+                      [value]="producto.id"> {{ producto.nombre }}
+                  </option>
+          
+                </select>      
+        </div>
+
         <div class="form-group col-md-4" >
           <label for="">Cantidad</label>
           <input type="number" name="cantidad{{i}}" class="form-control" [(ngModel)]="prod.cantidad">

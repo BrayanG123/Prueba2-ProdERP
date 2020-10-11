@@ -8,6 +8,10 @@ import { Categoria } from 'src/app/models/categoria.model';
 import { Compraprod } from 'src/app/models/compraprod.model';
 import { Proveedor } from 'src/app/models/proveedor.model';
 import { ProveedorService } from 'src/app/services/proveedor.service';
+import { ProductoService } from 'src/app/services/producto.service';
+import { Producto } from 'src/app/models/producto.model';
+import { Almacen } from 'src/app/models/almacen.model';
+import { AlmacenService } from 'src/app/services/almacen.service';
 
 @Component({
   selector: 'app-comprasnuevo',
@@ -18,19 +22,23 @@ export class ComprasnuevoComponent implements OnInit {
 
   //------ Ejemplo video -------
   categoria = new Categoria('','');
-  dataarrayy = [];
+  dataarrayy: Compraprod[] = [];
   //------ Hashta aqui Ejemplo video -------
   
   compra: Compra = new Compra( null, null, [] ); //este interactua con el template
   prodcompra = new Compraprod(null,null);
   proveedores: Proveedor[] = [];
+  productos: Producto[] = [];
+  depositos: Almacen[] = [];
   
-  dataarray = [];
+  // dataarray = [];
   // forma: FormGroup;
   // numero: number = 3;
 
   constructor( public _comprasService: ComprasService,
                public _proveedorService: ProveedorService,
+               public _productoService: ProductoService,
+               public _depositoService: AlmacenService,
                private fb:FormBuilder  
   ) { 
     // this.crearFormulario();
@@ -47,12 +55,18 @@ export class ComprasnuevoComponent implements OnInit {
   }
 
   inicializarOpcionesSelect(){
-    this._proveedorService.cargarProveedores() 
-          .subscribe( (proveedores: Proveedor[]) => {
-            this.proveedores = proveedores;
-            console.log('proveedores Cargados: ',this.proveedores);
-            // console.log(this.categorias);
-          } );
+    this._proveedorService.cargarProveedores().subscribe( (proveedores: Proveedor[]) => {
+        this.proveedores = proveedores;
+        //====================================
+        this._productoService.cargarProductos().subscribe( (productos: Producto[]) => {
+            this.productos = productos;
+            //==================================
+            this._depositoService.cargarAlmacenes().subscribe( (depositos: Almacen[]) => {
+                this.depositos = depositos;
+                //================================
+            });
+        })
+    } );
   }
 
   limpiar(){
@@ -66,21 +80,28 @@ export class ComprasnuevoComponent implements OnInit {
     this.compra = new Compra( this.compra.provider_id, this.compra.deposit_id, this.dataarrayy);
     console.log('Antes de mandar al ComprasService: ');
     console.log( this.compra );
-
-    this._comprasService.crearCompra( this.compra )
-          .subscribe( (resp:any) => {
+    // return;
+    this._comprasService.crearCompra( this.compra ).subscribe( (resp:any) => {
             console.log(resp);
             // console.log('ComprasTS: tal parece que paso el submit');
             this.limpiar();      
-          } ) 
+    }) 
 
     // console.log('Ejecutado el crearCompra?: acabo el proceso del submit');
   }
-  
-  cambioProveedor(id:number){
-      this.compra.provider_id = id;
-      console.log('El ID solo:', id);
-      console.log('La compra:', this.compra);
+
+  cambioProducto(id, index){
+    this.dataarrayy[index].id = parseInt(id);
+  }
+
+  cambioDeposito(id){
+    this.compra.deposit_id = parseInt(id);
+  }
+
+  cambioProveedor(id){
+      this.compra.provider_id = parseInt(id);
+      // console.log('El ID solo:', id);
+      // console.log('La compra:', this.compra);
   }
 
   addForm(){
