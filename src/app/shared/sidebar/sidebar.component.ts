@@ -54,13 +54,13 @@ export class SidebarComponent implements OnInit {
       case 'Administrador':
         this.administrador = true;
         break;
-      case 'Compra':
+      case 'Encargado Compra':
         this.rolcompra = true;
         break;
-      case 'Venta':
+      case 'Encargado Venta':
         this.rolventa = true;
         break;
-      case 'Almacen':
+      case 'Encargado Almacen':
         this.rolalmacen = true;
         break;
       default:

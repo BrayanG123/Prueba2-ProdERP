@@ -1,3 +1,4 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 
 //para recibir el parametro id por url
@@ -16,7 +17,8 @@ export class CrearcontraComponent implements OnInit {
   contrasena: string = '';
 
   constructor( private activatedRoute: ActivatedRoute, 
-               private _usuarioService: UsuarioService  
+               private _usuarioService: UsuarioService,
+              //  private route: Route  
   ) { 
     this.activatedRoute.params.subscribe( params => {
       // console.log(params['id']);
@@ -33,10 +35,10 @@ export class CrearcontraComponent implements OnInit {
     // return;
     console.log('el f: ', f.value.password);
     this.contrasena = f.value.password;
-    this._usuarioService.crearContrasena( this.contrasena, this.token )
-        .subscribe( respuesta => {
-          console.log( respuesta );
-        })
+    this._usuarioService.crearContrasena( this.contrasena, this.token ).subscribe( respuesta => {
+        // console.log( respuesta );
+        this._usuarioService.logout();
+    })
     // console.log('con la funcion atob(): ');
     // console.log(atob(this.token.split('.')[1]));
     // console.log('aqui el token decodificado');
