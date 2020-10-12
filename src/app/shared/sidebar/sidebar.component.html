@@ -27,7 +27,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
 
-        <li class="nav-item has-treeview menu-open">
+        <!-- <li class="nav-item has-treeview menu-open">
 
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -43,7 +43,7 @@
                 <p>Dashboard v1</p>
               </a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a href="../../index2.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v2</p>
@@ -54,7 +54,7 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v3</p>
               </a>
-            </li> -->
+            </li>
 
             <li class="nav-item">
               <a class="nav-link" routerLink="active" routerLink="/usuaripos">
@@ -63,78 +63,84 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <li class="nav-item" *ngIf="administrador || rolcompra">
           <a class="nav-link" routerLink="active" routerLink="/compras">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-box-open"></i>
             <p>Compras</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/proveedores">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-dolly"></i>
             <p>proveedores</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador || rolalmacen">
           <a class="nav-link" routerLink="active" routerLink="/categorias">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-bookmark"></i>
             <p>Categorias</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador || rolalmacen">
           <a class="nav-link" routerLink="active" routerLink="/producto">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-boxes"></i>
             <p>Productos</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/clientes">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-handshake"></i>
             <p>Clientes</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/empleados">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-id-card"></i>
             <p>Empleados</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador || rolventa">
           <a class="nav-link" routerLink="active" routerLink="/ventas">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-cash-register"></i>
             <p>Ventas</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/activities">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-book"></i>
             <p>Bitacora</p>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="active" routerLink="/almacenes">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fa fa-bandcamp"></i>
             <p>Almacenes</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/dptos">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-building"></i>
             <p>Departamentos</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/sucursal">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-adjust"></i>
             <p>Sucursales</p>
           </a>
         </li>
         <li class="nav-item" *ngIf="administrador">
           <a class="nav-link" routerLink="active" routerLink="/account-settings">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-cogs"></i>
             <p>Config</p>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="administrador">
+          <a (click)="logout()" class="nav-link cursor">
+            <i class="nav-icon fas fa-power-off"></i>
+            <p>Logout</p>
           </a>
         </li>
 

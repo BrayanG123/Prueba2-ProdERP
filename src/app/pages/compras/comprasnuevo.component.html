@@ -147,21 +147,9 @@
 
   <!-- Con la forma del tutorial xd -->
 
-  <form (ngSubmit)="onSubmit()" class="col-10">
+  <form  (ngSubmit)="onSubmit()" class="col-10">
 
     <div class="container">
-
-      <!-- <div class="form-row">
-        <label class="col-2 col-form-label">Id Proveedor</label>
-        <div class="col">
-          <input class="form-control"
-                 type="number"
-                 name="idproveedor"
-                 placeholder="Id Proveedor"
-                 [(ngModel)]="compra.provider_id">
-          
-        </div>
-      </div> -->
 
       <div class="form-row">
         <label class="col-2 col-form-label">Proveedor</label>
@@ -205,21 +193,6 @@
         </div>
       </div> -->
 
-      <!-- ============== NO TENEMOS DEPOSITOOOOOOOOOOOO ===================== -->
-      <!-- <div class="form-row">
-        <label class="col-2 col-form-label">Deposito</label>
-        <div class="col">
-          <select class="form-control"
-                  (change)="cambioProveedor($event.target.value)"
-                  >
-                  <option value="">Seleccione Deposito</option>
-                  <option *ngFor="let deposito of depositos" [value]="deposito.id">
-                    {{ deposito.empresa }}
-                  </option>
-          </select>       
-          
-        </div>
-      </div> -->
 
     </div>
 

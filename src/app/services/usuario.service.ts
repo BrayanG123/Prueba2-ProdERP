@@ -15,7 +15,9 @@ export class UsuarioService {
   usuario: Usuario = new Usuario("", "", "", "", "", "");
   access_token: string;
 
-  constructor(public http: HttpClient, public router: Router) {}
+  constructor(public http: HttpClient, 
+              private router: Router) 
+  {}
 
   login(usuario: Usuario) {
     let url = URL_SERVICIOS + "/login";
@@ -39,6 +41,11 @@ export class UsuarioService {
     );
   }
 
+  logout(){
+    localStorage.removeItem('access_token');
+    this.router.navigateByUrl('/login');
+  }
+
   guardarStorage( access_token: string, role: string) {
     // localStorage.setItem("id", id);
     localStorage.setItem("access_token", access_token);
@@ -54,6 +61,11 @@ export class UsuarioService {
 
   estalogeado() {
     return this.access_token.length > 5 ? true : false;
+  }
+
+  validarToken() {
+    const token = localStorage.getItem('access_token');
+    return token.length > 5 ? true : false;
   }
 
   crearUsuario(usuario: Usuariocrear) {

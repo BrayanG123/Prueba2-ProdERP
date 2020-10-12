@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-#themecolors .selector {
+#themecolors .selector, .cursor {
     cursor: pointer;
 }
 
@@ -9,6 +9,10 @@
     height: 580px;
     overflow: hidden;
     overflow-y: scroll;
+} */
+
+/* .cursor{
+    cursor: pointer;
 } */
 
 .content-wrapper{

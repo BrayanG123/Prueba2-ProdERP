@@ -13,6 +13,7 @@ import { Router } from '@angular/router'
 export class ProveedoresComponent implements OnInit {
 
   public proveedores: Proveedor[] = [];
+  public cargando: boolean = true;
 
   constructor( public _proveedorService: ProveedorService,  
                private router: Router,
@@ -27,6 +28,7 @@ export class ProveedoresComponent implements OnInit {
         .subscribe( (proveedores:any) => {
           // console.log(proveedores);
           this.proveedores = proveedores;
+          this.cargando = false;
         } ) 
   }
 

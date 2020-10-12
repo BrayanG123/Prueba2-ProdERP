@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class CategoriaComponent implements OnInit {
 
   public categorias: Categoria[] = [];
+  public cargando: boolean = true;
 
   constructor( public _categoriaService: CategoriaService,
                private router: Router
@@ -28,6 +29,7 @@ export class CategoriaComponent implements OnInit {
         .subscribe( (categorias:any) => {
           // console.log(categorias);
           this.categorias = categorias;
+          this.cargando = false;
         } ) 
   }
 

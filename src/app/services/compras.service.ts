@@ -4,6 +4,7 @@ import { URL_SERVICIOS } from "src/app/config/config";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, map } from "rxjs/operators";
 import { throwError } from "rxjs";
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: "root",
@@ -16,7 +17,13 @@ export class ComprasService {
 
   cargarCompras() {
     let url = URL_SERVICIOS + "/purchases";
-    return this.http.get(url);
+    var reqHeader = new HttpHeaders({
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${this.token}`,
+      "Accept": "application/json",
+    });
+
+    return this.http.get(url, { headers: reqHeader });
   }
 
   crearCompra(compra: Compra) {
@@ -28,7 +35,7 @@ export class ComprasService {
       "Accept": "application/json",
     });
 
-    console.log("proveedor.servie: ", compra);
+    console.log("compras.servie: ", compra);
     return this.http.post(url, {
         provider_id: compra.provider_id,
         deposit_id: compra.deposit_id,
@@ -38,12 +45,12 @@ export class ComprasService {
           // console.log('ComprasService: Paso el map');
           console.log(resp);
 
-          // Swal.fire(
-          //   'Creado!',
-          //   medico.nombre,
-          //   'success'
-          // );
-          // return resp.medico;
+          Swal.fire(
+            'Creado!',
+            'El registro se ha creado correctamente',
+            'success'
+          );
+          return resp;
         }),
         catchError((err) => {
           console.log("Aqui el error en POstCompra: ", err);

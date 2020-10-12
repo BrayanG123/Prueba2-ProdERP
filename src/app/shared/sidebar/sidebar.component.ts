@@ -3,6 +3,7 @@ import { SidebarService } from '../../services/shared/sidebar.service';
 // import { UsuarioService } from 'src/app/services/usuario.service';
 // import { Usuario } from 'src/app/models/usuario.model';
 import { TemasService } from 'src/app/services/shared/temas.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -21,24 +22,22 @@ export class SidebarComponent implements OnInit {
 
   constructor( public _sidebar: SidebarService,
                private _temaService: TemasService,
-              //  private _usuarioService: UsuarioService
+               private _usuarioService: UsuarioService
   ) {
-    // this.escucharCambioSidebar();
     this.cargarSidebarTemaDefecto();
     _temaService.changeEmittedSidebar$.subscribe( text => {
-          // console.log(text);
           this.cambiarTema(text);
     });
 
-    
-
     this.role = localStorage.getItem('role');
     this.definirRole();
-
-    // console.log(this.role);
    }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this._usuarioService.logout();
   }
 
   cargarSidebarTemaDefecto(){

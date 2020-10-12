@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class ComprasComponent implements OnInit {
 
   public compras: Comprasget[] = []; 
+  public cargando: boolean = true;
 
   constructor( public _compraService: ComprasService, 
                private router:Router
@@ -27,6 +28,7 @@ export class ComprasComponent implements OnInit {
           .subscribe( (compras:any) => {
               console.log(compras);
               this.compras = compras;
+              this.cargando = false;
           } );
   }
 

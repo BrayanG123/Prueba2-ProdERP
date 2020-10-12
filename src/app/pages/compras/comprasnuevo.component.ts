@@ -77,14 +77,16 @@ export class ComprasnuevoComponent implements OnInit {
 
   onSubmit(){
     console.log( this.dataarrayy );
-    this.compra = new Compra( this.compra.provider_id, this.compra.deposit_id, this.dataarrayy);
+    this.compra = new Compra( this.compra.provider_id, this.compra.deposit_id, [], this.dataarrayy);
     console.log('Antes de mandar al ComprasService: ');
     console.log( this.compra );
     // return;
     this._comprasService.crearCompra( this.compra ).subscribe( (resp:any) => {
             console.log(resp);
             // console.log('ComprasTS: tal parece que paso el submit');
-            this.limpiar();      
+            
+            this.limpiar();     
+
     }) 
 
     // console.log('Ejecutado el crearCompra?: acabo el proceso del submit');
