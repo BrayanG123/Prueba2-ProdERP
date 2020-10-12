@@ -1,6 +1,5 @@
 
-
-<!-- <div class="row">
+<div class="row animated fadeIn" *ngIf="cargando">
 
   <div class="col-sm-12">
       <div class="alert-warning text-center">
@@ -12,45 +11,66 @@
       </div>
   </div>
 
-</div> -->
+</div>
 
-<div class="col-12">
+<div class="col-12" *ngIf="!cargando">
 
   <div class="card">
     <div class="card-body">
 
-      <h3 class="card-title"> Usuarios Registrados ( <small>7</small> )</h3>
+      <h3 class="card-title"> Usuarios Registrados </h3>
     
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>Imagen</th>
             <th>Email</th>
-            <th>Nombre</th>
-            <th>Role</th>
-            <th>Botones</th>
+            <th>Id_Empleado</th>
+            <th>Rol</th>
+            <th>Opciones</th>
           </tr>
         </thead>
 
+        <!-- <tbody>
+          <tr *ngFor="let usuario of usuarios">
+              <td> {{ usuario.email }}</td>
+              <td> {{ usuario.employee_id }} </td>
+              <td> {{ usuario.rol_id }} </td>
+              <td>
+                  <button (click)="editarUsuario(usuario)" class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button (click)="borrarUsuario(usuario)" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </button>
+              </td>
+          </tr>
+        </tbody> -->
         <tbody>
           <tr>
-            <td>Imagen</td>
-            <td>Email</td>
-            <td>Nombre</td>
-            <td>Role</td>
-            <td>
-              <button class="btn btn-primary">
-                <i class="fa fa-save"></i>
-              </button>
-              <button class="btn btn-danger">
-                <i class="fa fa-trash"></i>
-              </button>
-            </td>
+              <td> {{ usuario.email }}</td>
+              <td> {{ usuario.employee_id }} </td>
+              <td> {{ usuario.rol_id }} </td>
+              <!-- <td> {{ usuario }} </td> -->
+              <td>
+                  <button (click)="editarUsuario(usuario)" class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button (click)="borrarUsuario(usuario)" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </button>
+              </td>
           </tr>
         </tbody>
+
       </table>
 
     </div>
+
+    <div class="card-footer">
+
+      <a [routerLink]="['/usuarios-nuevo']" class="btn btn-block btn-danger col-4"> Crear un Usuario </a>
+    </div>
+
   </div>
 
 </div>

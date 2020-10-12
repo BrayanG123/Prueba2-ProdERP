@@ -65,6 +65,12 @@
           </ul>
         </li> -->
 
+        <li class="nav-item" *ngIf="administrador">
+          <a class="nav-link" routerLink="active" routerLink="/usuarios">
+            <i class="nav-icon fas fa-user"></i>
+            <p>usuarios</p>
+          </a>
+        </li>
         <li class="nav-item" *ngIf="administrador || rolcompra">
           <a class="nav-link" routerLink="active" routerLink="/compras">
             <i class="nav-icon fas fa-box-open"></i>

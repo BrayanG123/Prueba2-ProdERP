@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CrearcontraComponent } from './crearcontrasena/crearcontra.component';
+import { RegisterComponent } from './login/register.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CrearcontraComponent } from './crearcontrasena/crearcontra.component';
     FooterComponent,
     LoginComponent,
     CrearcontraComponent,
+    RegisterComponent,
   ],
   imports: [
     APP_ROUTES,

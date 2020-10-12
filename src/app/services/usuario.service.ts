@@ -13,7 +13,7 @@ import { Usuariocrear } from "../models/usuariocrear.model";
 })
 export class UsuarioService {
   usuario: Usuario = new Usuario("", "", "", "", "", "");
-  access_token: string;
+  access_token = localStorage.getItem('access_token');
 
   constructor(public http: HttpClient, 
               private router: Router) 
@@ -25,11 +25,7 @@ export class UsuarioService {
     return this.http.post(url, usuario).pipe(
       map((resp: any) => {
         console.log("La respuestaaa: ", resp);
-        // console.log(resp.role_id);
-        // console.log(resp.role_name);
         this.guardarStorage( resp.access_token, resp.role_name);
-        // console.log("exito en login");
-        // console.log(resp);
         return true;
       }),
       catchError((err) => {
@@ -47,16 +43,15 @@ export class UsuarioService {
   }
 
   guardarStorage( access_token: string, role: string) {
-    // localStorage.setItem("id", id);
-    localStorage.setItem("access_token", access_token);
-    localStorage.setItem("role", role);
-    // console.log("guardarStorage: ", id);
-    // console.log("guardarStorage: ", role);
-    // this.usuario._id = id;
+    // console.log('al hace login token: ', access_token);
+    // localStorage.setItem("access_token", access_token);
+    // localStorage.setItem("role", role);
+
     this.usuario.role_name = role;
     this.usuario.access_token = access_token;
     this.access_token = access_token;
-    console.log('el usuario y sus datos', this.usuario);
+
+    // console.log('el usuario y sus datos', this.usuario);
   }
 
   estalogeado() {
@@ -66,6 +61,28 @@ export class UsuarioService {
   validarToken() {
     const token = localStorage.getItem('access_token');
     return token.length > 5 ? true : false;
+  }
+
+  cargarUsuarios() {
+    let url = URL_SERVICIOS + `/user`;
+
+    var reqHeader = new HttpHeaders({
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${this.access_token}`,
+      "Accept": "application/json",
+    });
+
+    return this.http.get(url, { headers: reqHeader }).pipe(
+      map((resp: any) => {
+        return resp;
+      }),
+      catchError((err) => {
+        console.log("Catcherror ERrorrrrr");
+        console.log("Aqui el error:", err);
+        // return throwError( err );
+        return throwError(err);
+      })
+    );
   }
 
   crearUsuario(usuario: Usuariocrear) {

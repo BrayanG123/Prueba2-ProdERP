@@ -49,7 +49,7 @@ const pagesRoutes: Routes = [
         children: [
             { path: 'dashboard', component: DashboardComponent },
 
-            { path: 'usuarios', component: CrearcontraComponent },
+            { path: 'usuarios', component: UsuariosComponent },
             { path: 'usuarios-nuevo', component: UsuarioNuevoComponent },
             // { path: 'nueva-contraseña/:token', component: CrearcontraComponent },
 
