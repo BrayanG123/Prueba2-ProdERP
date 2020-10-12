@@ -44,6 +44,10 @@ import { VentasnuevoComponent } from './ventas/ventasnuevo.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientenuevoComponent } from './clientes/clientenuevo.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { CiudadComponent } from './ciudad/ciudad.component';
+import { CiudadnuevoComponent } from './ciudad/ciudadnuevo.component';
+import { PaisComponent } from './pais/pais.component';
+import { PaisnuevoComponent } from './pais/paisnuevo.component';
 
 
 
@@ -82,6 +86,10 @@ import { ActivitiesComponent } from './activities/activities.component';
         ClientesComponent,
         ClientenuevoComponent,
         ActivitiesComponent,
+        CiudadComponent,
+        CiudadnuevoComponent,
+        PaisComponent,
+        PaisnuevoComponent,
     ],
     imports: [
         SharedModule,

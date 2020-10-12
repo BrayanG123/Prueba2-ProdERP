@@ -35,6 +35,8 @@ import { VentasnuevoComponent } from './ventas/ventasnuevo.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientenuevoComponent } from './clientes/clientenuevo.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { CiudadComponent } from './ciudad/ciudad.component';
+import { CiudadnuevoComponent } from './ciudad/ciudadnuevo.component';
 
 
 
@@ -74,6 +76,9 @@ const pagesRoutes: Routes = [
             { path: 'almacenes-nuevo', component: AlmacennuevoComponent },
             { path: 'almaceneditar/:id', component: AlmaceneditComponent },
             
+            { path: 'ciudades', component: CiudadComponent },
+            { path: 'ciudades-nuevo', component: CiudadnuevoComponent },
+
             { path: 'ventas', component: VentasComponent },
             { path: 'ventas-nuevo', component: VentasnuevoComponent },
 

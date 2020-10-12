@@ -59,7 +59,7 @@ export class AlmaceneditComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: 'Borrar'
+      confirmButtonText: 'Aceptar'
     }).then((result) => {
       if (result.isConfirmed) {
         this.almacen.ubicacion = almacen.ubicacion;

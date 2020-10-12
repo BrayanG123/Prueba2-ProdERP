@@ -15,6 +15,7 @@ export class SucursalComponent implements OnInit {
 
   public cargando: boolean = true;
   public sucursales: Sucursal[] = [];
+  // public ciudades: Sucursal[] = [];
 
   constructor( private _sucursalServices: SucursalService,
                private router: Router

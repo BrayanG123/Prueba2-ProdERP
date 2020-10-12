@@ -1,0 +1,55 @@
+<div class="row animated fadeIn">
+    <div class="col-lg-6">
+
+        <div class="card">
+            <div class="card-body">
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar(f.value)" 
+                      [formGroup]="productoForm"
+                      class="form p-t-20"
+                      >
+
+                    <div class="form-group">
+                        <label>Pais</label>
+
+                        <select 
+                        (change)="cambiopais( $event.target.value )"
+                        formControlName="pais"
+                        class="form-control" required>
+
+                            <option value="">Seleccione Pais</option>
+                            <option *ngFor="let pais of paises" [value]="pais.id">
+                                {{ pais.nombre }}
+                            </option>
+                        </select>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre Ciudad</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                            <input [ngModel]="ciudad.nombre" 
+                            formControlName="nombre" 
+                            type="text" 
+                            class="form-control"
+                            placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    
+                    
+                    <button type="submit" 
+                            [disabled]="productoForm.invalid"
+                            class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+
+                    <a [routerLink]="['/ciudades']" class="btn btn-block btn-danger"> Cancelar </a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
