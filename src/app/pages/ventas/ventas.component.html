@@ -24,8 +24,8 @@
               <tr>
                 <th>Venta Id</th>
                 <th>Total</th>
-                <th>Productos</th>
-                <th>Opciones</th>
+                <!-- <th>Productos</th> -->
+                <!-- <th>Opciones</th> -->
               </tr>
             </thead>
     
@@ -34,7 +34,7 @@
                   <td> {{ venta.id }}</td>
                   <td> {{ venta.Total }} </td>
                   <!-- <td> {{ venta }} </td> -->
-                  <td> productos </td>
+                  <!-- <td> productos </td> -->
                   <!-- <td>
                       <button (click)="editarSucursal(sucursal)" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
@@ -47,6 +47,10 @@
             </tbody>
           </table>
     
+        </div>
+
+        <div class="card-footer">
+          <a [routerLink]="['/ventas-nuevo']" class="btn btn-block btn-danger col-2"> Agregar </a>
         </div>
       </div>
     

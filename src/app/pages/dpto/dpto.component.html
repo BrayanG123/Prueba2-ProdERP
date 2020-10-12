@@ -1,4 +1,4 @@
-<!-- <div class="row animated fadeIn" *ngIf="cargando">
+<div class="row animated fadeIn" *ngIf="cargando">
 
     <div class="col-sm-12">
         <div class="alert-warning text-center">
@@ -10,89 +10,49 @@
         </div>
     </div>
   
-</div> -->
+</div>
   
-<div class="col-12" >
+<div class="col-12" *ngIf="!cargando">
   
       <div class="card">
         <div class="card-body">
     
-          <h3 class="card-title"> Sucursales </h3>
+          <h3 class="card-title"> Departamentos </h3>
         
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Ciudad</th>
-                <th>Pais</th>
+                <th>Cantidad de Empleados</th>
+                <!-- <th>Pais</th> -->
                 <!-- <th>Telefono</th> -->
-                <th>Opciones</th>
+                <!-- <th>Opciones</th> -->
               </tr>
             </thead>
     
             <tbody>
-              <!-- <tr *ngFor="let almacen of almacenes">
-                  <td> {{ almacen.ubicacion }}</td>
-                  <td> {{ almacen.office_id }} </td>
+
+                <tr *ngFor="let dpto of departamentos">
+                  <td> {{ dpto.nombre }}</td>
+                  <td> {{ dpto.cantidad_de_empleados }} </td>
                   
                   <td>
-                      <button (click)="editarAlmacen(almacen)" class="btn btn-primary">
+                      <!-- <button (click)="editarDpto(dpto)" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                       </button>
-                      <button (click)="borrarAlmacen(almacen)" class="btn btn-danger">
+                      <button (click)="borrarDpto(dpto)" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
-                      </button>
+                      </button> -->
                   </td>
-              </tr> -->
-              <tr>
-                  <td>Sucursal Casco viejo</td>
-                  <td>Santa Cruz</td>
-                  <td>Bolivia</td>
-                  <!-- <td>77667766</td> -->
-                  <td>
-                    <button  class="btn btn-primary">
-                      <i class="fa fa-edit"></i>
-                    </button>
-                    <button  class="btn btn-danger">
-                      <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-              </tr>  
-              <tr>
-                  <td>Sucursal Cuzco</td>
-                  <td>Cuzco</td>
-                  <td>Peru</td>
-                  <!-- <td>77667766</td> -->
-                  <td>
-                    <button  class="btn btn-primary">
-                      <i class="fa fa-edit"></i>
-                    </button>
-                    <button  class="btn btn-danger">
-                      <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-              </tr>  
-              <tr>
-                  <td>Sucursal Vinto</td>
-                  <td>Cochabamba</td>
-                  <td>Bolivia</td>
-                  <!-- <td>77667766</td> -->
-                  <td>
-                    <button  class="btn btn-primary">
-                      <i class="fa fa-edit"></i>
-                    </button>
-                    <button  class="btn btn-danger">
-                      <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-              </tr>  
-             
-              
-             
-              
+              </tr>        
             </tbody>
+
           </table>
     
+        </div>
+
+        <div class="card-footer">
+          <a [routerLink]="['/dptos-nuevo']" class="btn btn-block btn-danger col-2"> Agregar </a>
         </div>
       </div>
     

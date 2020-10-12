@@ -86,6 +86,7 @@ export class ComprasnuevoComponent implements OnInit {
             // console.log('ComprasTS: tal parece que paso el submit');
             
             this.limpiar();     
+            
 
     }) 
 

@@ -7,6 +7,7 @@ import { URL_SERVICIOS } from "src/app/config/config";
 import { map, catchError } from "rxjs/operators";
 import { throwError } from "rxjs";
 import { Usuariocrear } from "../models/usuariocrear.model";
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: "root",
@@ -87,15 +88,27 @@ export class UsuarioService {
 
   crearUsuario(usuario: Usuariocrear) {
     let url = URL_SERVICIOS + "/user";
-    return this.http.post(url, usuario).pipe(
+
+    var reqHeader = new HttpHeaders({
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${this.access_token}`,
+      "Accept": "application/json",
+    });
+
+    return this.http.post(url, usuario, { headers: reqHeader } ).pipe(
       map((resp: any) => {
         console.log("POST Crear usuario: ", resp);
+        Swal.fire(
+          'Creado!',
+          'El registro se ha creado correctamente',
+          'success'
+        );
         // console.log(resp.role_id);
         // console.log(resp.role_name);
         // this.guardarStorage(resp.role_id, resp.access_token, resp.role_name);
         // console.log("exito en login");
         // console.log(resp);
-        return true;
+        return resp;
       }),
       catchError((err) => {
         console.log("Catcherror ERrorrrrr");

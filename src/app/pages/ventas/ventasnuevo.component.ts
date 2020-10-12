@@ -12,6 +12,7 @@ import { Producto } from 'src/app/models/producto.model';
 import { Cliente } from 'src/app/models/cliente.model';
 import { Almacen } from 'src/app/models/almacen.model';
 import { AlmacenService } from 'src/app/services/almacen.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ventasnuevo',
@@ -41,6 +42,7 @@ export class VentasnuevoComponent implements OnInit {
                public _productoService: ProductoService,
                public _clienteService: ClienteService,
                public _depositoService: AlmacenService,
+               private router: Router
               //  private fb:FormBuilder  
   ) { 
     // this.crearFormulario();
@@ -92,6 +94,7 @@ export class VentasnuevoComponent implements OnInit {
     this._ventasService.crearVenta( this.venta ).subscribe( (resp:any) => {
             console.log(resp);
             this.limpiar();   
+            this.router.navigateByUrl('/ventas');
     } )
 
        

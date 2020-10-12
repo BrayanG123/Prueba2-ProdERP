@@ -61,6 +61,22 @@
                         </select>
                         
                     </div>
+
+                    <div class="form-group">
+                        <label>Departamento</label>
+
+                        <select 
+                        (change)="cambioDpto( $event.target.value )"
+                        
+                        class="form-control" required>
+
+                            <option value="">Seleccione el Departamento</option>
+                            <option *ngFor="let dpto of dptos" [value]="dpto.id">
+                                {{ dpto.nombre }}
+                            </option>
+                        </select>
+                        
+                    </div>
                     <!-- <div class="form-group">
                         <label for="exampleInputuname">Rol</label>
                         <div class="input-group">
@@ -69,13 +85,13 @@
                         </div>
                     </div> -->
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="exampleInputuname">Departamento</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-user"></i></div>
                             <input [ngModel]="usuario.departament_id" name="departament_id" type="number" class="form-control" placeholder="dpto" required>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label for="exampleInputuname">Email</label>

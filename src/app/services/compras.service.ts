@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, map } from "rxjs/operators";
 import { throwError } from "rxjs";
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: "root",
@@ -13,7 +14,8 @@ export class ComprasService {
 
   token = localStorage.getItem('access_token');
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient,
+              private router: Router) {}
 
   cargarCompras() {
     let url = URL_SERVICIOS + "/purchases";
@@ -44,12 +46,13 @@ export class ComprasService {
         map((resp: any) => {
           // console.log('ComprasService: Paso el map');
           console.log(resp);
-
+  
           Swal.fire(
             'Creado!',
             'El registro se ha creado correctamente',
             'success'
           );
+          this.router.navigateByUrl('/compras');
           return resp;
         }),
         catchError((err) => {
