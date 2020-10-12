@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SettingsService } from 'src/app/services/settings.service';
+import { TemasService } from 'src/app/services/shared/temas.service';
 
 @Component({
   selector: 'app-account-settings',
@@ -8,21 +9,27 @@ import { SettingsService } from 'src/app/services/settings.service';
 })
 export class AccountSettingsComponent implements OnInit {
 
-  constructor( public _ajustes:SettingsService ) {
+  @Output() itemSeleccionado : EventEmitter<number>;
+  constructor( public _ajustes:SettingsService, 
+               private _temaService: TemasService  
+  ) {
     // this._ajustes.cargarAjustes();
+    this.itemSeleccionado = new EventEmitter();
   }
 
   ngOnInit(): void {
     // this.colocarCheck();
   }
 
-  changeTheme( theme:string ){
-    // console.log(theme);
-    const linkTheme = document.querySelector('#theme');
-    const url = `./assets/css/colors/${theme}.css`;
-    console.log(linkTheme);
+  changeTheme( id:number ){
+    this._temaService.emitChange(id);
+    // this.itemSeleccionado.emit( id );
+    // console.log(id);
+    // linkTheme.setAttribute('href', url);
+  }
 
-    linkTheme.setAttribute('href', url);
+  changeThemeSidebar( id:number ){
+    this._temaService.emitChangeSide(id);
   }
   
   // cambiarColor( tema:string, link:any ){

@@ -5,47 +5,265 @@
                     
                 <h4>Seleccione el Tema</h4>
 
-                <!-- <div class="r-panel-body">
-
-                    <ul id="themecolors" class="m-t-20">
-                            <li><b>Con el sidebar claro</b></li>
-                            <li><a #link1 (click)="cambiarColor('default', link1)" data-theme="default" class="selector default-theme">1</a></li>
-                            <li><a #link2 (click)="cambiarColor('green', link2)" data-theme="green" class="selector green-theme">2</a></li>
-                            <li><a #link3 (click)="cambiarColor('red', link3)" data-theme="red" class="selector red-theme">3</a></li>
-                            <li><a #link4 (click)="cambiarColor('blue', link4)" data-theme="blue" class="selector blue-theme">4</a></li>
-                            <li><a #link5 (click)="cambiarColor('purple', link5)" data-theme="purple" class="selector purple-theme">5</a></li>
-                            <li><a #link6 (click)="cambiarColor('megna', link6)" data-theme="megna" class="selector megna-theme">6</a></li>
-                             
-                            <li class="d-block m-t-30"><b>Con el sidebar oscuro</b></li>
-                            <li><a #link7 (click)="cambiarColor('default-dark', link7)" data-theme="default-dark" class="selector default-dark-theme">7</a></li>
-                            <li><a #link8 (click)="cambiarColor('green-dark', link8)" data-theme="green-dark" class="selector green-dark-theme">8</a></li>
-                            <li><a #link9 (click)="cambiarColor('red-dark', link9)" data-theme="red-dark" class="selector red-dark-theme">9</a></li>
-                            <li><a #link10 (click)="cambiarColor('blue-dark', link10)" data-theme="blue-dark" class="selector blue-dark-theme">10</a></li>
-                            <li><a #link11 (click)="cambiarColor('purple-dark', link11)" data-theme="purple-dark" class="selector purple-dark-theme">11</a></li>
-                            <li><a #link12 (click)="cambiarColor('megna-dark', link12)" data-theme="megna-dark" class="selector megna-dark-theme">12</a></li>
-                        </ul>
-                
-                </div> -->
-
 
                 <div class="r-panel-body">
                     <ul id="themecolors" class="m-t-20">
-                        <li><b>Con el sidebar claro</b></li>
-                        <li><a (click)="changeTheme('default')" data-theme="default" class="selector default-theme">1</a></li>
-                        <li><a (click)="changeTheme('green')" data-theme="green" class="selector green-theme">2</a></li>
-                        <li><a (click)="changeTheme('red')" data-theme="red" class="selector red-theme">3</a></li>
-                        <li><a (click)="changeTheme('blue')" data-theme="blue" class="selector blue-theme">4</a></li>
-                        <li><a (click)="changeTheme('purple')" data-theme="purple" class="selector purple-theme">5</a></li>
-                        <li><a (click)="changeTheme('megna')" data-theme="megna" class="selector megna-theme">6</a></li>
                         
-                        <li class="d-block m-t-30"><b>Con el sidebar oscuro</b></li>
-                        <li><a (click)="changeTheme('default-dark')" data-theme="default-dark" class="selector default-dark-theme">7</a></li>
-                        <li><a (click)="changeTheme('green-dark')" data-theme="green-dark" class="selector green-dark-theme">8</a></li>
-                        <li><a (click)="changeTheme('red-dark')" data-theme="red-dark" class="selector red-dark-theme">9</a></li>
-                        <li><a (click)="changeTheme('blue-dark')" data-theme="blue-dark" class="selector blue-dark-theme working">10</a></li>
-                        <li><a (click)="changeTheme('purple-dark')" data-theme="purple-dark" class="selector purple-dark-theme">11</a></li>
-                        <li><a (click)="changeTheme('megna-dark')" data-theme="megna-dark" class="selector megna-dark-theme">12</a></li>
+                        <li class="d-block m-t-30"><b>Navbar</b></li>
+                        <li>
+                            <div class="bg-primary elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(0)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-secondary elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(1)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-info elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(2)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-success elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(3)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-danger elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(4)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-indigo elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(5)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-purple elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(6)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-pink elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(7)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-navy elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(8)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-lightblue elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(9)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-teal elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(10)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-cyan elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(11)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-dark elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(12)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-gray-dark elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(13)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-gray elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(14)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-light elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(15)">
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="bg-warning elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(16)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-white elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(17)">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg-orange elevation-2"
+                                 style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                 (click)="changeTheme(18)">
+                            </div>
+                        </li>
+
+                        <li class="d-block m-t-30"><b>Sidebar</b></li>
+
+                        <!-- <li>    <div class="bg-primary elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(0)"> </div>
+                        </li>
+                        <li>    <div class="bg-warning elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(1)"> </div>
+                        </li>
+                        <li>    <div class="bg-info elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(2)"> </div>
+                        </li>
+                        <li>    <div class="bg-danger elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(3)"> </div>
+                        </li>
+                        <li>    <div class="bg-success elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(4)"> </div>
+                        </li>
+                        <li>    <div class="bg-indigo elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(5)"> </div>
+                        </li>
+                        <li>    <div class="bg-lightblue elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(6)"> </div>
+                        </li> -->
+                        <li>    <div class="bg-navy elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(7)"> </div>
+                        </li>
+                        <!-- <li>    <div class="bg-purple elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(8)"> </div>
+                        </li>
+                        <li>    <div class="bg-fuchsia elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(9)"> </div>
+                        </li>
+                        <li>    <div class="bg-pink elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(10)"> </div>
+                        </li>
+                        <li>    <div class="bg-maroon elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(11)"> </div>
+                        </li>
+                        <li>    <div class="bg-orange elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(12)"> </div>
+                        </li>
+                        <li>    <div class="bg-lime elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(13)"> </div>
+                        </li>
+                        <li>    <div class="bg-teal elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(14)"> </div>
+                        </li>
+                        <li>    <div class="bg-olive elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(15)"> </div>
+                        </li> -->
+
+                        <!-- <li class="d-block m-t-30"><b>Con el Sidebar Claro</b></li> -->
+
+                        <li>    <div class="bg-light elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(16)"> </div>
+                        </li>
+                        <!-- <li>    <div class="bg-warning elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(17)"> </div>
+                        </li>
+                        <li>    <div class="bg-info elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(18)"> </div>
+                        </li>
+                        <li>    <div class="bg-danger elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(19)"> </div>
+                        </li>
+                        <li>    <div class="bg-success elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(20)"> </div>
+                        </li>
+                        <li>    <div class="bg-indigo elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(21)"> </div>
+                        </li>
+                        <li>    <div class="bg-lightblue elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(22)"> </div>
+                        </li>
+                        <li>    <div class="bg-navy elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(23)"> </div>
+                        </li>
+                        <li>    <div class="bg-purple elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(24)"> </div>
+                        </li>
+                        <li>    <div class="bg-fuchsia elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(25)"> </div>
+                        </li>
+                        <li>    <div class="bg-pink elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(26)"> </div>
+                        </li>
+                        <li>    <div class="bg-maroon elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(27)"> </div>
+                        </li>
+                        <li>    <div class="bg-orange elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(28)"> </div>
+                        </li>
+                        <li>    <div class="bg-lime elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(29)"> </div>
+                        </li>
+                        <li>    <div class="bg-teal elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(30)"> </div>
+                        </li>
+                        <li>    <div class="bg-olive elevation-2"
+                                    style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"
+                                    (click)="changeThemeSidebar(31)"> </div>
+                        </li> -->
+
                     </ul>
+
+                    
+                    
                 
                 </div>
 
