@@ -44,8 +44,8 @@ export class UsuarioService {
 
   guardarStorage( access_token: string, role: string) {
     // console.log('al hace login token: ', access_token);
-    // localStorage.setItem("access_token", access_token);
-    // localStorage.setItem("role", role);
+    localStorage.setItem("access_token", access_token);
+    localStorage.setItem("role", role);
 
     this.usuario.role_name = role;
     this.usuario.access_token = access_token;
@@ -131,6 +131,22 @@ export class UsuarioService {
         // console.log("exito en login");
         // console.log(resp);
         return true;
+      }),
+      catchError((err) => {
+        console.log("Catcherror ERrorrrrr");
+        console.log("Aqui el error:", err);
+        // return throwError( err );
+        return throwError(err);
+      })
+    );
+  }
+
+  cargarRoles(){  
+    let url = URL_SERVICIOS + `/roles`;
+
+    return this.http.get(url).pipe(
+      map((resp: any) => {
+        return resp;
       }),
       catchError((err) => {
         console.log("Catcherror ERrorrrrr");

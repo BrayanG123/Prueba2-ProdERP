@@ -119,6 +119,12 @@
             <p>Bitacora</p>
           </a>
         </li>
+        <li class="nav-item" *ngIf="administrador">
+          <a class="nav-link" routerLink="active" routerLink="/reporte">
+            <i class="nav-icon fas fa-book"></i>
+            <p>Reportes</p>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="active" routerLink="/almacenes">
             <i class="nav-icon fa fa-bandcamp"></i>

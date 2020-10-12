@@ -48,6 +48,14 @@ import { CiudadComponent } from './ciudad/ciudad.component';
 import { CiudadnuevoComponent } from './ciudad/ciudadnuevo.component';
 import { PaisComponent } from './pais/pais.component';
 import { PaisnuevoComponent } from './pais/paisnuevo.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { AsasComponent } from './reporte/asas.component';
+import { ReportPurchaseBillsComponent } from './reporte/report-purchase-bills.component';
+import { ReportSaleBillsComponent } from './reporte/report-sale-bills.component';
+import { ReportPurchaseNotessComponent } from './reporte/report-purchase-notess.component';
+import { ReportSaleNotesComponent } from './reporte/report-sale-notes.component';
+import { ReportSaleMesComponent } from './reporte/report-sale-mes.component';
+import { ReportPurchaseMesComponent } from './reporte/report-purchase-mes.component';
 
 
 
@@ -90,6 +98,14 @@ import { PaisnuevoComponent } from './pais/paisnuevo.component';
         CiudadnuevoComponent,
         PaisComponent,
         PaisnuevoComponent,
+        ReporteComponent,
+        AsasComponent,
+        ReportPurchaseBillsComponent,
+        ReportSaleBillsComponent,
+        ReportPurchaseNotessComponent,
+        ReportSaleNotesComponent,
+        ReportSaleMesComponent,
+        ReportPurchaseMesComponent,
     ],
     imports: [
         SharedModule,

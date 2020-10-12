@@ -47,12 +47,27 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Rol</label>
+
+                        <select 
+                        (change)="cambioRol( $event.target.value )"
+                        
+                        class="form-control" required>
+
+                            <option value="">Seleccione el Rol</option>
+                            <option *ngFor="let rol of roles" [value]="rol.id">
+                                {{ rol.name }}
+                            </option>
+                        </select>
+                        
+                    </div>
+                    <!-- <div class="form-group">
                         <label for="exampleInputuname">Rol</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-user"></i></div>
                             <input [ngModel]="usuario.rol_id" name="rol_id" type="number" class="form-control" placeholder="rol" required>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label for="exampleInputuname">Departamento</label>

@@ -1,0 +1,31 @@
+<div class = "container mt-5">
+    <div class = "p-3 mb-2 bg-dark">
+        <h1 class = "text-center text-white">Reportes de Todos los Pedidos</h1>
+    </div>
+        <table id = "table" class="table table-striped">
+            <thead class="thead-dark text">
+                <tr class = "text-center">
+                    <th>id_envio</th>
+                    <th>id_carrito</th>
+                    <th>Nombre del Usuario</th>
+                    <th>Dirección</th>
+                    <th>Estado del Pedido</th>
+                </tr>
+            </thead>
+            <tbody class="t">
+                    <tr *ngFor = "let ship of shipPDF" class="table-info text-center">
+                        <td>{{ship.id}}</td>
+                        <td>{{ship.cart_id}}</td>
+                        <td>{{ship.name}}</td>
+                        <td>{{ship.address}}</td>
+                        <td>{{ship.description}}</td>
+                    </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class = "container">
+            <div class = "row justify-content-center">
+                <button (click) ="dowload()" type="button" class="btn btn-outline-primary ">Descargar PDF</button>
+            </div>
+        </div>
+</div>

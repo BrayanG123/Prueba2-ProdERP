@@ -37,6 +37,14 @@ import { ClientenuevoComponent } from './clientes/clientenuevo.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { CiudadComponent } from './ciudad/ciudad.component';
 import { CiudadnuevoComponent } from './ciudad/ciudadnuevo.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { AsasComponent } from './reporte/asas.component';
+import { ReportPurchaseMesComponent } from './reporte/report-purchase-mes.component';
+import { ReportPurchaseBillsComponent } from './reporte/report-purchase-bills.component';
+import { ReportSaleBillsComponent } from './reporte/report-sale-bills.component';
+import { ReportPurchaseNotessComponent } from './reporte/report-purchase-notess.component';
+import { ReportSaleNotesComponent } from './reporte/report-sale-notes.component';
+import { ReportSaleMesComponent } from './reporte/report-sale-mes.component';
 
 
 
@@ -94,6 +102,15 @@ const pagesRoutes: Routes = [
 
             { path: 'activities', component: ActivitiesComponent },
 
+            { path: 'reporte', component: ReporteComponent },
+            { path: 'reportPurchaseBills', component: ReportPurchaseBillsComponent },
+            { path: 'reportSaleBills', component: ReportSaleBillsComponent },
+            { path: 'reportPurchaseNotes', component: ReportPurchaseNotessComponent },
+            { path: 'reportSaleNotes', component: ReportSaleNotesComponent },
+            { path: 'reportSaleMes', component: ReportSaleMesComponent },
+            { path: 'reportPurchaseMes', component: ReportPurchaseMesComponent },
+            
+            { path: 'reporteprueba', component: AsasComponent },
             { path: 'account-settings', component: AccountSettingsComponent },
             { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
         ]

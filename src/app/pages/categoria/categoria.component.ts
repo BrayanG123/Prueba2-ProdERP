@@ -4,6 +4,7 @@ import { CategoriaService } from 'src/app/services/categoria.service';
 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { ReporteService } from 'src/app/services/reporte.service';
 
 
 @Component({
@@ -17,11 +18,15 @@ export class CategoriaComponent implements OnInit {
   public cargando: boolean = true;
 
   constructor( public _categoriaService: CategoriaService,
-               private router: Router
+               private router: Router,
+              //  private _asas:ReporteService
   ) { }
 
   ngOnInit(): void {
     this.cargarCategorias();
+    // this._asas.cargarVentas().subscribe( resp => {
+    //   console.log(resp);
+    // } )
   }
 
   cargarCategorias(){

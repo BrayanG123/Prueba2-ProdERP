@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Rol } from 'src/app/models/rol.model';
 
 import { Usuariocrear } from 'src/app/models/usuariocrear.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -12,32 +13,26 @@ import Swal from 'sweetalert2';
 export class UsuarioNuevoComponent implements OnInit {
 
   usuario: Usuariocrear = new Usuariocrear('', '', '', '', null, null, '');
+  roles: Rol[] = [];
 
-  constructor( public _usuarioService: UsuarioService 
-    
-  ) { 
+  constructor( public _usuarioService: UsuarioService, 
+              //  private _dptoService: Oficce
+               ) 
+  {
+    this._usuarioService.cargarRoles().subscribe( (roles: Rol[]) => {
+        this.roles = roles;
+    } )
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {}
+
+  cambioRol( id ) {
+    this.usuario.rol_id = id;
   }
-
-  // crearProveedor( usuario: Usuariocrear ){
-  //   this.usuario. = usuario.;
-  //   this.usuario. = usuario.;
-  //   this.usuario. = usuario.;
-
-  //   this._usuarioService.crearProveedor( this.usuario )
-  //       .subscribe( usuario => {
-  //         console.log(usuario);
-  //       } );
-
-    
-  // }
 
   guardar( usuario: Usuariocrear ){
     console.log(usuario);
-    // return;
+    return;
 
     Swal.fire({
       title: 'Desea registrar el nuevo usuario?',
@@ -53,7 +48,7 @@ export class UsuarioNuevoComponent implements OnInit {
       this.usuario.nombre = usuario.nombre;
       this.usuario.apellido = usuario.apellido;
       this.usuario.sexo = usuario.sexo;
-      this.usuario.rol_id = usuario.rol_id;
+      // this.usuario.rol_id = usuario.rol_id;
       this.usuario.departament_id = usuario.departament_id;
       this.usuario.email = usuario.email;
     
